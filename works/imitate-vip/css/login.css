@@ -1,0 +1,151 @@
+body{
+	background-color:#FDFBFE;
+	background-size:cover;
+	}
+.login-header{
+	width:1000px;
+	margin:auto;
+	overflow:hidden;
+}
+.login-header-logo{
+	float:left;
+	width:310px;
+	height:50px;
+	background:url(../img/sprite.png)no-repeat;
+	background-position:0 0;
+	margin:25px 10px;
+	}
+.login-header-mg{
+	width:450px;
+	height:28px;
+	margin:36px auto;
+	float:right;
+	overflow:hidden;
+	}
+.login-header-mg{
+	width:450px;
+	height:28px;
+	background:url(../img/sprite.png)no-repeat;
+	background-position:-317px 0px;
+	}
+.login-content{
+	width:1000px;
+	height:450px;
+	margin:auto;
+	background:url(../img/login/login-bg.jpg)no-repeat;
+	background-size:cover;
+	}
+.login-content .login-box{
+	width:300px;
+	height:300px;
+	margin-left: 600px;
+	padding-top:80px;
+	}
+.login-box h3{
+	text-align:left;
+	margin-bottom:10px;
+	color:#000;
+	}
+.login-box #username,
+.login-box #pwd{
+	display:block;
+	width:240px;
+	height:28px;
+	line-height:28px;
+	padding-left: 5px;
+	border:1px solid #ccc;
+	border-radius:3px;
+	color:#555;
+	font-size:12px;
+	}
+.login-box #check-username,
+.login-box #check-pwd{
+	display:block;
+	height:20px;
+	line-height:20px;
+	text-align:left;
+	color:#F10180;
+	font-size:12px;
+	margin-bottom:5px;
+	padding-left:10px;
+	}
+.login-box button{
+	width:120px;
+	height:30px;
+	background-color:#F10180;
+	color:#fff;
+	border:none;
+	display:block;
+	margin-top:10px;
+	cursor: pointer;
+	}
+.login-box p{
+	margin-top:20px;
+	height:20px;
+	}
+.login-box p label{
+	float:left;
+	font-size:12px;
+	color:#000;
+	}
+.login-box p span{
+	margin-left:60px;
+	}
+.login-box p a{
+	font-size:12px;
+	}
+.login-box p a:nth-child(3){
+	color:#F10180;
+	}
+.login-box .other-login{
+	margin:20px;
+	text-align:left;
+	}
+.login-box .other-login span{
+	font-size:12px;
+	}
+.login-box .other-login .link{
+	width:25px;
+	height:25px;
+	background:url(../img/sprite.png)no-repeat;
+	}
+.login-box .other-login .link-a{
+	background-position: -179px -56px;
+}
+.login-box .other-login .link-b{
+	background-position: -207px -56px;
+}
+.login-box .other-login .link-c{
+	background-position: -235px -56px;
+}
+.login-box .other-login .link-d{
+	background-position: -291px -56px;
+}
+.login-box .other-login .link-a:hover{
+	background-position: -151px -56px;
+}
+.login-box .other-login .link-b:hover{
+	background-position: -319px -56px;
+}
+.login-box .other-login .link-c:hover{
+	background-position: -347px -56px;
+}
+.login-box .other-login .link-d:hover{
+	background-position: -263px -56px;
+}
+.login-footer{
+	text-align:center;
+	font-size:12px;
+}
+@media only screen and (min-width:1600px){
+	.login-header{
+		width:1200px;
+	}
+	.login-content{
+		width:1200px;
+		height:550px;
+	}
+	.login-content .login-box{
+		margin-left:700px;
+		}
+}

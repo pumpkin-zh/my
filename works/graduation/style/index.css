@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+	font-size:16px;
+	color:white;
+	text-align: center;
+	}
+body{
+	min-width: 350px;
+	background: #226039 url("../img/bg.jpg") no-repeat scroll center 0;
+	}
+.header{
+	width:100%;
+	margin:auto;
+	}
+.header .graduation{
+	width:250px;
+	height:120px;
+	margin:20px 0 0 50px;
+	white-space:pre-line;
+	transform:rotate(-8deg);
+	transition: opacity 1s;
+	opacity: 0.4;
+	}
+.header .graduation:hover{
+	opacity: 1;
+}
+.header nav{
+	width:100%;
+	position:relative;
+	left:0;
+	top:150px;
+	background-color:rgba(56, 134, 72, 0.7);
+	border-bottom: 1px solid #559765;
+	}
+.header nav ul{
+	display:inline-block;
+	margin:auto;
+	}
+.header nav ul li{
+	list-style:none;
+	float:left;
+	margin:0px 14px;
+	}
+.header nav ul a{
+	display:block;
+	text-decoration:none;
+	font-size:18px;
+	padding:15px 18px;
+	}
+.content{
+	width: 1024px;
+	height:100%;
+	margin:200px auto;
+	overflow: hidden;
+	background-color: #226039;
+}
+.content .photo{
+	float: left;
+	margin:30px;
+	width:280px;
+	height:210px;
+}
+.content .photo .img{
+	position: relative;
+	margin:auto;
+	width:280px;
+	height:210px;
+	overflow: hidden;
+}
+.content .photo .img:hover span{
+	opacity: 1;
+	background-color:rgb(0,0,0,0.5);
+}
+.content .photo .img span{
+	display: block;
+	position: absolute;
+	left:0;right: 0;
+	top:0px;
+	width:80%;
+	padding:24% 10.3% 27.5%;
+	text-indent:30px;
+	text-align: left;
+	opacity:0;
+	transition:all 1s;
+}
+[class*="col-"]{
+			float:left;
+		}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.content{
+		width: 768px;
+		margin:200px auto;
+	}
+	.content .photo{
+		margin:30px 52px;	
+	}
+}
+@media only screen and (max-width:768px){
+	.content{
+		width:350px;
+	}
+	.content .photo{
+		margin:20px 15px;
+		width:320px;
+		height:280px;
+	}
+	.content .photo .img{
+		width:320px;
+		height:240px;
+	}
+	.content .photo .img span{
+		padding:31.5% 10.3% 32.5%;
+	}
+	.header nav ul li{
+		margin:0px 8px;
+		}
+	.header nav ul li a{
+		font-size: 12px;
+		padding:6px 10px;
+	}
+	.header .graduation{
+		font-size: 12px;
+	}
+}
+

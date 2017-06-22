@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta http-equiv="viewport" content="width=device-width,initial-scale=1">
+	<title>VIP登录</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<!--[if lte IE 8]> 
+<p class="browserupgrade">您的浏览器版本过老，请到<a href="http://browserhappy.com">这里</a>更新浏览器，以获取更佳的体验</p>
+<![endif]-->
+<header class="login-header">
+	<div class="login-header-logo"></div>
+    <div class="login-header-mg"></div>
+</header>
+<div class="login-content">
+	<form action="index.html" method="post" class="login-box" id="login-box" onsubmit="return check();">
+    	<h3>如有账号，请登录</h3>
+        <input type="text" name="username" id="username" placeholder="手机号/用户名/邮箱"/>
+        <span id="check-username"></span>
+        <input type="password" name="password" id="pwd" placeholder="密码"/>
+        <span id="check-pwd"></span>
+        
+        <button type="submit">登录</button>
+        <p>
+        	<label><input type="checkbox" name="checkbox" class="checkbox">记住密码</label>
+            <span><a href="">忘记密码？</a> | <a href="">免费注册</a></span>
+        </p>
+        
+        <div class="other-login">
+        	<span>合作网站帐号登录:</span><br>
+        	<a href="#" class="link link-a"></a>
+        	<a href="#" class="link link-b"></a>
+        	<a href="#" class="link link-c"></a>
+        	<a href="#" class="link link-d"></a>
+        </div>
+    </form>
+</div>
+<footer class="login-footer">Copyright 2008-2017 ****.com，All Rights Reserved ICP证：粤 B2-20081234</footer>
+
+<script>
+function check(){
+		var user = document.getElementById("username");
+		var pwd = document.getElementById("pwd");
+		var username = user.value;
+		var password = pwd.value;
+		var checkpwd = document.getElementById("check-pwd");
+		var checkusername = document.getElementById("check-username");
+		
+			if( username == null || username == ""){
+				checkusername.innerHTML="请输入用户名";
+                user.focus();
+                return false;
+			}
+			if( password == null || password == ""){
+				checkpwd.innerHTML="请输入密码";
+                pwd.focus();
+                return false;
+			}
+			var form = document.getElementById("login-box");
+			form.submit();
+}
+</script>
+</body>
+</html>

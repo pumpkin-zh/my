@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>错误页面</title>
+	<style type="text/css">
+		body{
+		
+		}
+		.not-found{
+			width:50%;
+			margin:auto;
+			/*background: linear-gradient(to bottom right, red , blue);*/
+			text-align: center;
+			color:black;
+			font-size: 100px;
+			letter-spacing:10px;
+			font-weight:bolder;
+		}
+		.not-found span:first-child{
+			margin-top:100px;
+			animation: error2 2s infinite;
+		}
+		.not-found span{
+			display:block;
+			animation: error 2s infinite;
+		}
+		@keyframes error{
+			25%{transform: translateX(-50px);}
+			50%{transform: translateX(0px);}
+			75%{transform: translateX(50px);}
+			100%{transform: translateX(0px);}
+		}
+		@keyframes error2{
+			25%{transform: translateX(50px);}
+			50%{transform: translateX(0px);}
+			75%{transform: translateX(-50px);}
+			100%{transform: translateX(0px);}
+		}
+	</style>
+</head>
+<body>
+<div class="not-found">
+	<span>404..</span>
+	<span>页面不见啦!</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>加载动画</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		body{
+			min-width:434px;
+			background-color:#FFD454;
+			background-size: cover;
+		}
+		.box{
+			margin:50px 75px;
+			width: 200px;
+			height: 200px;
+			background-color: #222;
+			float: left;
+			border-radius: 50%;
+			display: box;
+			display: -webkit-box;
+			display: flex;/*弹性布局  设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。*/
+			display: -webkit-flex;
+			display:-ms-flexbox;
+		}
+		.box .big,
+		.box .small{
+			width:50%;
+			height:50%;
+			background-color:#FFD454;
+			border-radius: 50%;
+			align-self: center;
+			-ms-align-self: center;
+			justify-content: center;/*justify-content属性定义了项目在主轴上的对齐方式。*/
+			-ms-justify-content: center;
+			margin: auto;
+			display: flex;
+			display: -webkit-flex;
+			display:-ms-flexbox;
+			animation:ani 1s infinite;
+		}
+		.box .small{
+			width:25%;
+			height:25%;
+			background-color:#222;
+			animation:ani 2s infinite;
+		}
+		@keyframes ani{
+			to{height:90%;width:90%;}
+		}
+		@-webkit-keyframes ani{
+			to{height:90%;width:90%;}
+		}
+
+		/*第二个动画*/
+		.content{
+			position: relative;
+			width:250px;
+			height:250px;
+			margin:50px;
+			float: left;
+		}
+		.content .loading{
+			width:100%;
+			line-height: 50px;
+			position: absolute;
+			top:98px;
+			left: 0;right: 0;
+			text-align:center;
+		}
+		.content .loading span{
+			position: relative;
+			z-index: 99;
+			color:#fff;
+			font-size: 30px;
+			font-weight: bolder;
+		}
+		.content .loading:before{
+			content: '';
+			background:#61bdb6;
+			width:200px;
+			height:60px;
+			display: block;
+			position: absolute;
+			top:0;right:0;bottom:0;left:0;
+			margin: auto;
+			animation: befo 2s infinite ease-in-out;
+		}
+		.content .loading:after{
+			content: '';
+			background:#ff3600;
+			width:30px;
+			height:100px;
+			display: block;
+			position: absolute;
+			top:0;right:0;bottom:0;left:0;
+			margin: auto;
+			opacity: 0.5;
+			animation: afte 2s infinite ease-in-out;
+		}
+		@keyframes befo{
+			0%{transform: translateX(-15px);}
+			50%{transform: translateX(15px);}
+			100%{transform: translateX(-15px);}
+		}
+
+		@keyframes afte{
+			0%{transform: translateX(-55px);}
+			50%{transform: translateX(55px);}
+			100%{transform: translateX(-55px);}
+		}
+		/*第三个动画*/
+		.container{
+			position: relative;
+			width:434px;
+			height:250px;
+			margin:50px;
+			float: left;
+		}
+		.container .loading{
+			position: absolute;
+			width:434px;
+			margin-top:55px;
+			background:linear-gradient(180deg,#222 0, #444 100%);
+			box-shadow:inset 5px 5px 5px rgba(0,0,0,0.3);
+		}
+		.container .loading:after{
+			content:"";
+			display: table;
+			clear: both;
+		}
+		.container span{
+			float: left;
+			height:120px;
+			line-height: 140px;
+			width: 60px;
+		}
+		.container .loading > span{
+			color:#fff;
+			font-size: 40px;
+			text-align: center;
+			border-left: 1px solid #444;
+			border-right:1px solid #222;
+		}
+		.container .cover{
+			position: absolute;
+			margin-top:55px;
+			width:100%;
+			height:100%;
+		}
+		.container .cover span{
+			width: 62px;
+			/*background:linear-gradient(180deg,white 0, #ddd 100%);*/
+			background:#FFD454;
+			animation: up 2s infinite;
+		}
+
+		@keyframes up{
+			0%{margin-bottom:0;}
+			16%{margin-bottom:100%;height:20px;}
+			50%{margin-bottom:0;}
+			100%{margin-bottom:0;}
+		}
+		.cover span:nth-child(2){animation-delay:0.1428s;}
+		.cover span:nth-child(3){animation-delay:0.2857s;}
+		.cover span:nth-child(4){animation-delay:0.4285s;}
+		.cover span:nth-child(5){animation-delay:0.5714s;}
+		.cover span:nth-child(6){animation-delay:0.7142s;}
+		.cover span:nth-child(7){animation-delay:0.8571s;}
+
+		/*第四个动画*/
+		.disappear{
+			position: relative;
+			width:434px;
+			height:250px;
+			margin:50px;
+			float: left;
+			background:linear-gradient(180deg,#222 0, #444 100%);
+			box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+		}
+		.disappear .loading{
+			width: 100%;
+			line-height:250px;
+			text-align:center;
+		}
+		.disappear .loading span{
+			color:#fff;
+			font-size: 50px;
+			font-weight:800;
+			letter-spacing: 5px;
+			display: inline-block;
+		}
+		.disappear .loading span:nth-child(1){
+			animation: disappear 1.75s ease-in-out infinite;
+		}
+		.disappear .loading span:nth-child(2){
+			animation: disappear 1.75s ease-in-out infinite;
+			animation-delay: 0.21875s;
+		}
+		.disappear .loading span:nth-child(3){
+			animation: disappear 1.75s ease-in-out infinite;
+			animation-delay: 0.4375s;
+		}
+		.disappear .loading span:nth-child(4){
+			animation: disappear 1.75s ease-in-out infinite;
+			animation-delay: 0.65625s;
+		}
+		.disappear .loading span:nth-child(5){
+			animation: disappear 1.75s ease-in-out infinite;
+			animation-delay: 0.875s;
+		}
+		.disappear .loading span:nth-child(6){
+			animation: disappear 1.75s ease-in-out infinite;
+			animation-delay: 1.09375s;
+		}
+		.disappear .loading span:nth-child(7){
+			animation: disappear 1.75s ease-in-out infinite;
+			animation-delay: 1.3125s;
+		}
+		@keyframes disappear{
+			0%{transform:scale(0);}
+			12.5%{transform: scale(1);}
+			25%{transform: scale(1);}
+			33%{transform: scale(0);}
+			100%{transform: scale(0);}
+		}
+		/*第五个动画*/
+		.piece{
+			width:300px;
+			height:300px;
+			border:1px solid black;
+			float: left;
+			margin:50px;
+		}
+		.piece .square{
+			width: 150px;
+			height: 150px;
+			background-color: red;
+			margin:75px;
+			animation: change 1.5s infinite ease-in-out;
+		}
+		@keyframes change{
+			0%{transform: perspective(200px) rotateX(0deg) rotateY(0deg);background-color: red;}
+			50%{transform: perspective(200px) rotateX(-180deg) rotateY(0deg);
+				background-color: green;}
+			100%{transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);
+				background-color: blue;}
+		}
+.bigbox{
+	width:900px;
+	margin:0 auto;
+	overflow: hidden;
+}
+.container,.disappear{
+
+}
+@media only screen and (max-width:900px){
+	.bigbox{
+		width:434px;
+	}
+	.box{
+		margin:40px 0 20px 100px;
+	}
+	.content{
+		margin:40px 0 20px 85px;
+	}
+	.container,.disappear{
+		margin:40px 0;
+	}
+}
+
+	</style>
+</head>
+<body>
+<!--第一个-->
+<div class="bigbox">
+<div class="box">
+	<div class="big">
+		<div class="small"></div>
+	</div>
+</div>
+<!--第三个-->
+<div class="container">
+	<div class="loading">
+		<span>L</span>
+		<span>O</span>
+		<span>A</span>
+		<span>D</span>
+		<span>I</span>
+		<span>N</span>
+		<span>G</span>
+	</div>
+	<div class="cover">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</div>
+<!--第二个-->
+<div class="content">
+	<div class="loading">
+		<span>LOADING</span>
+	</div>
+</div>
+<!--第四个-->
+<div class="disappear">
+	<div class="loading">
+		<span>L</span>
+		<span>O</span>
+		<span>A</span>
+		<span>D</span>
+		<span>I</span>
+		<span>N</span>
+		<span>G</span>
+	</div>
+</div>
+<!--第五个-->
+<div class="piece">
+	<div class="square"></div>
+</div>
+</div>
+</body>
+</html>
